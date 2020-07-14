@@ -23,8 +23,9 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import useApi from './app/hooks/useApi';
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
