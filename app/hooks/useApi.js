@@ -19,16 +19,16 @@ const useApi = () => {
 
   const request = async () => {
     try {
+      setError(false);
       setLoading(true);
 
       const response = await api.get(endpoint);
-      if (response.status != 200) {
-        return setError(true);
-      }
 
       setLoading(false);
       setData(response.data);
     } catch (error) {
+      setError(true);
+      setLoading(false);
       console.log('API #####', error);
     }
   };
