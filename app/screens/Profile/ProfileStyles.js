@@ -10,9 +10,11 @@ export const CompanyName = styled.Text`
   color: ${colors.secondary};
 `;
 
-export const HeaderBackground = styled.View`
+export const HeaderBackground = styled.ImageBackground`
   background: ${colors.secondary};
   height: 130px;
+  padding-top: 10px;
+  padding-left: 10px;
   width: 100%;
 `;
 export const HeaderContainer = styled.View`
@@ -23,7 +25,7 @@ export const HeaderContainer = styled.View`
 `;
 
 export const Name = styled.Text`
-  color: ${colors.primary};
+  color: ${(props) => colors[props.color] || colors.primary};
   font-size: 20px;
   font-weight: 600;
 `;
@@ -34,9 +36,12 @@ export const InfoContainer = styled.View`
 `;
 
 export const ProfilePicture = styled.View`
-  background-color: red;
+  align-items: center;
+  background-color: ${(props) =>
+    colors.avatar[props.color] || colors.avatar[0]};
   border-radius: 35px;
   height: 70px;
+  justify-content: center;
   position: absolute;
   bottom: 0px;
   width: 70px;

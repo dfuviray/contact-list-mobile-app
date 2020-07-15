@@ -12,10 +12,10 @@ import {
 } from './ListItemStyles';
 
 export default function ListItem(data) {
-  const {index, name, company} = data;
+  const {company, index, name, onNavigateProfile} = data;
 
   return (
-    <TouchableWithoutFeedback onPress={() => console.log(data)}>
+    <TouchableWithoutFeedback onPress={onNavigateProfile}>
       <Container>
         <AvatarContainer>
           <Avatar index={index}>

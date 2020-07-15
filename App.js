@@ -1,15 +1,16 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
-import Contact from './app/screens/Contact/Contact';
-import Profile from './app/screens/Profile/Profile';
+import ContactStackNavigation from './app/navigation/ContactStackNavigation';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
   const {container} = styles;
   return (
     <View style={container}>
-      {/* <Contact /> */}
-      <Profile />
+      <NavigationContainer>
+        <ContactStackNavigation />
+      </NavigationContainer>
     </View>
   );
 };

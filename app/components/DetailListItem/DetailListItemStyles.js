@@ -13,8 +13,7 @@ export const Container = styled.View`
 export const IconContainer = styled.View`
   align-items: center;
   justify-content: center;
-  padding-left: 30px;
-  padding-right: 30px;
+  width: 70px;
 `;
 export const InfoContainer = styled.View``;
 export const Label = styled.Text`

@@ -1,5 +1,8 @@
 import React from 'react';
+import {Linking} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
+import {colors} from '../../config/colors';
 import {
   Container,
   CompanyName,
@@ -11,24 +14,58 @@ import {
 } from './ProfileStyles';
 import DetailListItem from '../../components/DetailListItem/DetailListItem';
 
-export default function Profile() {
+export default function Profile({navigation: {goBack}, route}) {
+  const {
+    params: {
+      index,
+      item: {company, email, name, phone, website},
+    },
+  } = route;
+
+  const linkingOptions = {
+    email: 'mailto:',
+    telephone: 'tel:',
+    website: 'https:',
+  };
+  console.log(index);
   return (
     <Container>
       <HeaderContainer>
-        <HeaderBackground></HeaderBackground>
-        <ProfilePicture></ProfilePicture>
+        <HeaderBackground source={{uri: 'https://picsum.photos/200'}}>
+          <Icon
+            name="angle-left"
+            size={30}
+            color={colors.white}
+            onPress={() => goBack()}
+          />
+        </HeaderBackground>
+        <ProfilePicture color={index}>
+          <Name color="white">{name[0]}</Name>
+        </ProfilePicture>
       </HeaderContainer>
       <InfoContainer>
-        <Name>John Doe</Name>
-        <CompanyName>Doe Holdings, Inc.</CompanyName>
+        <Name>{name}</Name>
+        <CompanyName>{company.name}</CompanyName>
       </InfoContainer>
-      <DetailListItem label="mobile" name="+639" icon="mobile-phone" />
-      <DetailListItem label="work" name="+111" icon="phone" iconSize={20} />
+      <DetailListItem
+        label="mobile"
+        name={phone}
+        icon="mobile-phone"
+        openApp={() => Linking.openURL(linkingOptions.telephone + phone)}
+      />
+      <DetailListItem
+        label="website"
+        name={website}
+        icon="globe"
+        iconSize={23}
+        openApp={() => Linking.openURL(linkingOptions.website + website)}
+      />
       <DetailListItem
         label="email"
-        name="john@company"
+        name={email}
         icon="envelope"
         iconSize={18}
+        openApp={() => Linking.openURL(linkingOptions.email + email)}
       />
     </Container>
   );

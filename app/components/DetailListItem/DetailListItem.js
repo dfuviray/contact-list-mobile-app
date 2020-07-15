@@ -13,6 +13,7 @@ import {
 export default function DetailListItem({
   label = 'Label',
   name = 'Name',
+  openApp,
   icon = 'home',
   iconSize = 30,
 }) {
@@ -23,7 +24,7 @@ export default function DetailListItem({
       </IconContainer>
       <InfoContainer>
         <Label>{label}</Label>
-        <Name>{name}</Name>
+        <Name onPress={openApp}>{name}</Name>
       </InfoContainer>
     </Container>
   );

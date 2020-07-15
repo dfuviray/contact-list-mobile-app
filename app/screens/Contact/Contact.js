@@ -7,7 +7,7 @@ import ListItem from '../../components/ListItem/ListItem';
 import ItemSeparator from '../../components/ItemSeparator/ItemSeparator';
 import useApi from '../../hooks/useApi';
 
-export default function Contact() {
+export default function Contact({navigation}) {
   const {data: contacts, error, loading} = useApi();
 
   return (
@@ -19,7 +19,16 @@ export default function Contact() {
       ) : !(contacts.length == 0) || error == true ? (
         <ContactList
           data={contacts}
-          renderItem={({item, index}) => <ListItem {...item} index={index} />}
+          renderItem={({item, index}) => (
+            <ListItem
+              {...item}
+              index={index}
+              navigation
+              onNavigateProfile={() =>
+                navigation.navigate('Profile', {item, index})
+              }
+            />
+          )}
           keyExtractor={(item) => item.id.toString()}
           ItemSeparatorComponent={() => <ItemSeparator />}
         />

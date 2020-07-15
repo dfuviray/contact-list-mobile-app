@@ -16,4 +16,5 @@ export const colors = {
     '#FFCAB1',
     '#564154',
   ],
+  white: '#ffffff',
 };
