@@ -1,7 +1,4 @@
 export const colors = {
-  background: '#f8fafb',
-  primary: '#494b4b',
-  secondary: '#a6b0ba',
   avatar: [
     '#83BCFF',
     '#E05263',
@@ -16,5 +13,9 @@ export const colors = {
     '#FFCAB1',
     '#564154',
   ],
+  background: '#f8fafb',
+  primary: '#494b4b',
+  red: '#E2294F',
+  secondary: '#a6b0ba',
   white: '#ffffff',
 };
