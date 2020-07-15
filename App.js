@@ -2,12 +2,14 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import Contact from './app/screens/Contact/Contact';
+import Profile from './app/screens/Profile/Profile';
 
 const App = () => {
   const {container} = styles;
   return (
     <View style={container}>
-      <Contact />
+      {/* <Contact /> */}
+      <Profile />
     </View>
   );
 };
