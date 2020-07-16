@@ -67,7 +67,7 @@ const useApi = () => {
     }
   };
 
-  return {data, error, loading};
+  return {data, error, loading, request};
 };
 
 export default useApi;

@@ -8,7 +8,7 @@ import ItemSeparator from '../../components/ItemSeparator/ItemSeparator';
 import useApi from '../../hooks/useApi';
 
 export default function Contact({navigation}) {
-  const {data: contacts, error, loading} = useApi();
+  const {data: contacts, error, loading, request: loadData} = useApi();
 
   return (
     <Container>
@@ -31,6 +31,8 @@ export default function Contact({navigation}) {
           )}
           keyExtractor={(item) => item.id.toString()}
           ItemSeparatorComponent={() => <ItemSeparator />}
+          refreshing={loading}
+          onRefresh={() => loadData()}
         />
       ) : (
         <Message>Contact is empty</Message>
