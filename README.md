@@ -12,3 +12,9 @@ Profile screen
 Offline message
 <br /><br />
 ![alt text](https://res.cloudinary.com/dgqg2myag/image/upload/v1594866603/contact_mobile_app_3_lgfrnk.png)
+<br /><br />
+Pull to refresh
+<br /><br />
+![alt text](https://res.cloudinary.com/dgqg2myag/image/upload/v1594868138/contact%20list%20mobile%20app/contact_mobile_app_4_wdlxqf.png)
+
+
